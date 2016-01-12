@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta name="viewport" content="width=device-width">
+	<title>{% block title %}{{ SITENAME }}{% endblock %}</title>
+
+	<link rel="stylesheet" href="{{ SITEURL }}/theme/css/style.css">
+	<link rel="stylesheet" href="{{ SITEURL }}/theme/css/pygment_trac.css">
+</head>
+<body>
+	<div class="wrapper">
+		<header>
+			<h1><a href="{{ SITEURL }}">{{ AUTHOR }}</a></h1>
+         	<p>{{ ABOUT }}</p>
+         	{% if HEAD_LINKS %}
+         	<ul>
+         		{% for link in HEAD_LINKS %}
+         		<li ><a href="{{ link[0] }}">{{ link[1] }}</a></li>
+         		{% endfor %}
+         	</ul>
+         	{% endif %}
+		</header>
+		<section>
+			{% block content %}
+			{% endblock %}
+		</section>
+		<footer>
+			<small><a href="#">Min theme</a></small><br/>
+			<small>Powered by <a href="http://blog.getpelican.com/">Pelican</a></small><br/>
+		</footer>
+	</div>
+	<script src="{{ SITEURL }}/theme/js/scale.fix.js"></script>
+</body>
+</html>

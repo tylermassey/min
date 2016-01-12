@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+{% if articles %}
+<h1>Articles</h1>
+<ul class="al">
+	{% for article in articles %}
+	<li class="al-item"><a href="{{ article.slug }}.html">{{ article.title }} <small>{{ article.locale_date }}</small></a></li>
+	{% endfor %}
+</ul>
+{% endif %}
+{% endblock content %}
